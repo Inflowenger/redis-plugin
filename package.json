@@ -1,0 +1,26 @@
+{
+  "name": "@flomorphic/redis-plugin",
+  "version": "0.1.0",
+  "description": "Redis node for the Inflowenger workflow canvas — keys, hashes, lists, sets, sorted sets, streams, pub/sub and raw commands over a connection the platform ships with every call. Holds no database credentials. Built on @inflowenger/node-plugin-sdk.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && cp src/manual.md dist/manual.md",
+    "clean": "rm -rf dist",
+    "start": "node dist/main.js",
+    "dev": "tsx src/main.ts",
+    "test": "tsc -p tsconfig.test.json && node --import tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@inflowenger/node-plugin-sdk": "^0.2.2",
+    "ioredis": "^5.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.0"
+  }
+}
